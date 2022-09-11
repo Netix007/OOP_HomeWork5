@@ -26,4 +26,17 @@ public class Admin extends People implements Administration, ModeratorInterface{
         DataBase.delUserById(id);
     }
 
+    @Override
+    public void deleteMessage(long id) {
+        DataBase.delMessageById(id);
+    }
+
+    @Override
+    public void editMessage(long id, String text) {
+        if (DataBase.findMessageById(id) != null) {
+            DataBase.findMessageById(id).setText(text);
+        } else {
+            System.out.printf("Message with ID %s not found%n", id);
+        }
+    }
 }

@@ -1,14 +1,12 @@
 package homework3;
 
-import java.util.List;
-
 public class App {
     public static void main(String[] args) {
 
         Admin superAdmin = new Admin("Boss");
         DataBase.addUserLink(new UserLink(superAdmin));
 
-        User superModer = new User("Moderator");
+        Moderator superModer = new Moderator("Moderator");
         DataBase.addUserLink(new UserLink(superModer));
 
         User superUser = new User("Worker");
@@ -21,8 +19,11 @@ public class App {
         superUser.sendMessage("Boss", "OK");
         superModer.sendMessage("Vasiliy1", "Hi!");
 
+        superModer.editMessage(0L, "");
         superAdmin.showAllMessages();
         superAdmin.showPersonalMessages();
+
+
 
     }
 }

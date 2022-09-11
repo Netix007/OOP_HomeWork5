@@ -13,11 +13,9 @@ public interface ModeratorInterface {
         }
     }
 
-    default void deleteMessage(long id) {
-        DataBase.delMessageById(id);
-    }
+    void deleteMessage(long id);
 
-    default void editMessage(long id, String text) {
-        DataBase.findMessageById(id).setText(text);
-    }
+    void editMessage(long id, String text);
+
+
 }

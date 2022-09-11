@@ -26,17 +26,13 @@ public class DataBase {
     }
 
     public static void delUserById(Long id) {
-        boolean flag = false;
         for (int i = 0; i < usersData.size(); i++) {
             if (usersData.get(i).getUserId() == id) {
                 usersData.remove(i);
-                flag = true;
-                break;
+                return;
             }
         }
-        if (!flag) {
-            System.out.println("No user with ID =" + id);
-        }
+        System.out.println("No user with ID =" + id);
     }
     public static long findUserId(String userNick) {
         for (int i = 0; i < usersData.size(); i++) {
@@ -59,17 +55,13 @@ public class DataBase {
     }
 
     public static void delMessageById(Long id) {
-        boolean flag = false;
         for (int i = 0; i < messageData.size(); i++) {
             if (messageData.get(i).getId() == id) {
                 messageData.remove(i);
-                flag = true;
-                break;
+                return;
             }
         }
-        if (!flag) {
-            System.out.println("No message with ID =" + id);
-        }
+        System.out.println("No message with ID =" + id);
     }
 
     public static Message findMessageById(long id) {
